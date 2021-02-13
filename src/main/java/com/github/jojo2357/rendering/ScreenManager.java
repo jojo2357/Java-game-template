@@ -144,7 +144,7 @@ public class ScreenManager {
     }
 
     private static float convertToScreenCoord(float pointIn, float dimension) {
-        return (pointIn - dimension) / dimension;
+        return (2 * pointIn - dimension) / dimension;
     }
 
     private static float myRounder(double in) {
