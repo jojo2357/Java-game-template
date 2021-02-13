@@ -34,7 +34,6 @@ public class ScreenManager {
     private static double rot = 0;
     private static float zoom = 1;
     private static double scrolls = 0;
-    private static Texture redX;
 
     public static void init() {
 
@@ -76,8 +75,6 @@ public class ScreenManager {
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-
-        redX = new Texture("MiscPics/redx");
     }
 
     private static void doMouseWheel(double vel) {
@@ -183,10 +180,6 @@ public class ScreenManager {
 
     public static void finishRender() {
         glfwSwapBuffers(window);
-    }
-
-    public static void drawRedX() {
-        renderTexture(redX, new Point(0, windowSize.getHeight()).multiply(2f).step(redX.width, -redX.heigth), 2);
     }
 
     public static void renderTexture(Texture text, Point point) {

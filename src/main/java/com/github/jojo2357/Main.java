@@ -1,9 +1,12 @@
 package com.github.jojo2357;
 
+import com.github.jojo2357.events.EventBase;
 import com.github.jojo2357.events.EventManager;
 import com.github.jojo2357.events.events.RenderEvent;
+import com.github.jojo2357.rendering.RenderableObject;
 import com.github.jojo2357.rendering.ScreenManager;
 import com.github.jojo2357.rendering.typeface.JojoFont;
+import com.github.jojo2357.util.Point;
 
 import java.util.Arrays;
 
@@ -20,6 +23,13 @@ public class Main {
         long timeIn = System.currentTimeMillis();
         long last;
         int loops = 0;
+        RenderableObject obj = new RenderableObject("FontAssets/A_white") {
+            @Override
+            public <T extends EventBase> boolean notify(T event) {
+                render(new Point(100, 100));
+                return false;
+            }
+        };
         do {
             last = System.currentTimeMillis();
             //loops++;

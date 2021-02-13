@@ -14,7 +14,7 @@ public abstract class RenderableObject implements IRecievesEvent{
     protected double rotation = 0; //degrees
     protected boolean canRotate = false;
 
-    protected RenderableObject(String filename) {
+    public RenderableObject(String filename) {
         GL.createCapabilities();
         this.image = new Texture(filename);
         this.imageSize = new Dimensions(image.getWidth(), image.getHeight());
